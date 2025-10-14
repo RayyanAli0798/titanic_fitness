@@ -1,7 +1,9 @@
-import "./Workout.css"
+import "./Workouts.css"
 
-export default function Workout() {
-    return(
-        
+export default function Workouts() {
+    return (
+        <>
+            Workout page
+        </>
     )
 }
