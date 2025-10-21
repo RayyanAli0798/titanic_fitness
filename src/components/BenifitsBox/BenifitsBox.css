@@ -1,0 +1,42 @@
+.benifitBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 16px 128px;
+    max-width: 2000px;
+    margin: 0 auto;
+    
+
+}
+.BenifitsBox1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+    background-color: rgb(7, 32, 52);
+    
+
+    background-image: url(../../assets/ship_wave_thin.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    >img{
+        width: 200px;
+        height: 250px;
+    }
+}
+.BenifitsBox1.long{
+    display: flex;
+    grid-column: span 2;
+    align-items: center;
+    justify-content: center;
+
+
+    background-image: url(../../assets/ship_wave_thin.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}

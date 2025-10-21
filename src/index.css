@@ -3,6 +3,13 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --primary-col: #C10000;
+  --dark-blue: #072034;
+  --text-col: #FFFFFF;
+  --bg-col: #020913;
+
+
+  background-color: var(--bg-col);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -29,4 +36,11 @@
 
   width: 100%;
 
+}
+
+.primary-btn{
+  color: var(--text-col);
+  background-color: var(--primary-col);
+  padding: 4px 16px;
+  border-radius: 4px;
 }

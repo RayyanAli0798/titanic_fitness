@@ -1,0 +1,12 @@
+.WaveHeader{
+    background-image: url("../../assets/ship_wave_bg.png");
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 188px;
+    align-items: flex-end;
+    color: rgb(255, 0, 0);
+    margin-top: -100px;
+}
