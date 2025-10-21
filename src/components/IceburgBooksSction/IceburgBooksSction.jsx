@@ -1,4 +1,5 @@
 import "./IceburgBooksSction.css"
+import ArticleBox from "../ArticleBox/ArticleBox"
 
 function ArticleThumbnail({title,desc,link}){
 
@@ -15,11 +16,8 @@ function ArticleThumbnail({title,desc,link}){
 export default function IceburgBooksSction(){
     return(
         <div className="ArticlesSection">
-            stuff
-
-
-
-
+        
+            <ArticleBox/>
         </div>
     )
 }
