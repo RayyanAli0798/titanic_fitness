@@ -1,3 +1,4 @@
+@media only screen and (max-width:600px){
 .benifitBox {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -8,6 +9,8 @@
     
 
 }
+}
+
 .BenifitsBox1{
     display: flex;
     align-items: center;

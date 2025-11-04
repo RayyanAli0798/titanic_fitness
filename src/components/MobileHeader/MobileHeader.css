@@ -1,0 +1,48 @@
+.mobile-Header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    padding: 32px;
+
+    color: var(--text-col);
+    justify-content: space-between;
+
+    backdrop-filter: blur(32px);
+
+    -webkit-box-shadow: 0px 4px 8px 0px #000000;
+    box-shadow: 0px 4px 8px 0px #000000;
+
+}
+
+@media only screen and (max-width:890px) {
+    .mobile-Header {
+        display: flex;
+    }
+}
+
+.mobile-nav {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: 0px;
+    right: 0;
+    top: 100%;
+    height: calc(100vh - 100%);
+    padding: 32px;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.menu-icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-icon.open {
+    transform: rotateZ(45deg);
+}
