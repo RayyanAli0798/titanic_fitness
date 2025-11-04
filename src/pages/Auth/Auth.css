@@ -1,0 +1,86 @@
+.authLayout{
+    display: flex;
+    color: rgb(255, 255, 255);
+
+    >.hero-banner{
+        flex:1;
+    }
+}
+
+.AuthFormColumn{
+    border: 2px solid red;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 550px){
+    .authLayout{
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .hero-banner{
+        max-height: 300px;
+        min-height: 0px;
+    }
+}
+
+.InputBoxsForAuthPage{
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+.authForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    gap: 25px;
+}
+.ButtonsArea{
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.smallTextAreaAuthPage{
+    display: flex;
+    flex-direction: column;
+}
+.ChangeBtn{
+    width: fit-content;
+    background-color: transparent;
+    color: red;
+    align-self: flex-end;
+    border: 2px solid transparent;
+}
+.ChangeBtn:hover{
+    border: 2px solid red;
+    text-decoration: underline;
+}
+
+.ProceedBtnForAuthPage{
+    background-color: red;
+    font-weight: 800;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    
+    border: 2px solid red;
+    border-radius: 7px;
+    
+}
+.InputBoxForAuth{
+    width: 50vw;
+    height: 5vh;
+    border: 3px solid black;
+    border-radius: 10px;
+
+}
+.InputBoxForAuth::placeholder{
+    color: black;
+}
