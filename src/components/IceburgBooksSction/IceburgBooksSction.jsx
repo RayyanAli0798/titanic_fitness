@@ -1,29 +1,54 @@
 import "./IceburgBooksSction.css"
 import ArticleBox from "../ArticleBox/ArticleBox"
-
 import axios from "axios";
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 export default function IceburgBooksSction() {
 
-
     const [articleData, setArticleData] = useState([]);
-    const thumbUrl = "http://localhost:8002/public/articles";
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState()
+    const thumbUrl = "http://localhost:8001/public/articles";
 
-    function loadThumbNails(){
+    function loadThumbNails() {
         axios.get(thumbUrl)
-        .then((res) => {
-            // this is the code that runs when we get a good response
-            alert(JSON.stringify(res)) 
-        })
-        .catch((err) => {
-            //code that runs when something goes wrong
-            alert(err) 
+            .then((res) => {
+                // this is the code that runs when we get a good response
+                // alert(JSON.stringify(res))
+                setArticleData(res.data)
+                setLoading(false)
+            })
+            .catch((err) => {
+                setError(err?.response?.data?.detail || "Error occured")
+                setLoading(false) 
+            })
+    }
+
+    // loadThumbNails();
+
+    useEffect(() => {
+        loadThumbNails();
+
+    }, [])
+
+    let articles = null;
+    if (loading) {
+        articles= <h1> Loading articles... </h1>
+    }
+    else if(error){
+        articles= <h1> Errors articles... </h1>
+    }
+    else{
+        articles = articleData.map(thumb => {
+            return(
+                <ArticleBox title={thumb.title} description = {thumb.description} link ={thumb.link}/>
+            )
         })
     }
 
-    loadThumbNails()
+
+
 
     return (
         <>
@@ -34,12 +59,7 @@ export default function IceburgBooksSction() {
             </div>
 
             <div className="ArticlesSection">
-                <ArticleBox title="djdj" desc="lorem" link="fggg" />
-                <ArticleBox title="djdj" desc="lorem" link="fdn" />
-                <ArticleBox title="djdj" desc="lorem" link="fdn" />
-                <ArticleBox title="djdj" desc="lorem" link="fdn" />
-                <ArticleBox title="djdj" desc="lorem" link="fdn" />
-                <ArticleBox title="djdj" desc="lorem" link="fdn" />
+                {articles} 
             </div>
 
 
