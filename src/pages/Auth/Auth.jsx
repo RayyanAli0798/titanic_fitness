@@ -3,16 +3,23 @@ import HeroBannner from "../../components/HeroBanner/HeroBanner"
 import AuthImage1 from "../../assets/AuthBanner_01.png"
 import { useState } from "react"
 
+import { useContext } from "react"
+import { UserContext } from "../../contexts/UserContexts"
+
 
 
 function LoginForm({ toggle }) {
+
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    
     return (
         <form className="authForm">
             
             <h1 className="AuthTitle"> Unsinkable Gains await </h1>
             <div className="InputBoxsForAuthPage">
-                <input className="InputBoxForAuth" type="email" minLength={12} required placeholder="Email" />
-                <input className="InputBoxForAuth" type="text" minLength={8} required placeholder="Password" />
+                <input className="InputBoxForAuth" value={email} onChange={(e) => setEmail(e.target.value)} type="email" minLength={12} required placeholder="Email" />
+                <input className="InputBoxForAuth" value={password} onChange={(e) => setPassword(e.target.value)}  type="text" minLength={8} required placeholder="Password" />
                 
             </div>
 
@@ -28,14 +35,30 @@ function LoginForm({ toggle }) {
     )
 }
 function RegisterForm({ toggle }) {
+
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("")
+
+    const {user,login} = useContext(UserContext);
+
+    function registerUser(){
+        login({
+            "username":"man",
+            "email":"fjfjfj@gmail.com"
+            
+        })
+    }
+
     return (
-        <form className="authForm">
+        <form className="authForm" onSubmit={registerUser}>
 
             <h1 className="AuthTitle"> Unsinkable Gains await </h1>
-            <div className="InputBoxsForAuthPage">
-                <input className="InputBoxForAuth" type="email" minLength={12} required placeholder="Email" />
-                <input className="InputBoxForAuth" type="text" minLength={8} required placeholder="Password" />
-                <input className="InputBoxForAuth" type="text" minLength={3} required placeholder="Display Name" />
+                {user ? <h1> Logged in user: {user.username} </h1> : null}
+            <div className="InputBoxsForAuthPage" >
+                <input value={email} onChange={(e) => setEmail(e.target.value)} className="InputBoxForAuth" type="email" minLength={12} required placeholder="Email" />
+                <input value={password} onChange={(e) => setPassword(e.target.value)}      className="InputBoxForAuth" type="text" minLength={8} required placeholder="Password" />
+                <input value={username} onChange={(e) => setUsername(e.target.value)} className="InputBoxForAuth" type="text" minLength={3} required placeholder="Display Name" />
             </div>
 
             <div className="ButtonsArea">
