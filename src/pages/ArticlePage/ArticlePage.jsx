@@ -5,7 +5,7 @@ import axios from "axios";
 
 export default function ArticlePage() {
     const { slug } = useParams();
-    const URL = `http://127.0.0.1:8001/public/articles/${slug}`
+    const URL = `http://127.0.0.1:8002/public/articles/${slug}`
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState();
     const [article, setArticle] = useState();

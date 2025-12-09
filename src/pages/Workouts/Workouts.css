@@ -1,0 +1,7 @@
+.workoutsPage{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 200px;
+    padding: 128px;
+}
